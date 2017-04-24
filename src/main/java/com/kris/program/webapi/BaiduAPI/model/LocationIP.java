@@ -2,15 +2,22 @@ package com.kris.program.webapi.BaiduAPI.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * LocationIp API 返回对象
  *
  * @author Kairou Zeng
  */
+@Data
+@ToString
 public class LocationIP {
 
+    private Integer status;
+
     private String address;
+
+    private Content content;
 
     @Data
     static class Content{
@@ -36,6 +43,13 @@ public class LocationIP {
 
         @JsonProperty("street_number")
         private String streetNumber;
+    }
+
+    @Data
+    static class Point{
+        private Double x;
+
+        private Double y;
     }
 }
 
